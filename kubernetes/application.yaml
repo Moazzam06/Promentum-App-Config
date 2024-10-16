@@ -8,8 +8,8 @@ spec:
 
   source:
     repoURL: https://github.com/Moazzam06/Promentum-App-Config.git
-    targetRevision: HEAD
-    path: dev
+    targetRevision: main
+    path: kubernetes/overlays/development
   destination: 
     server: https://kubernetes.default.svc
     namespace: promentum-app
