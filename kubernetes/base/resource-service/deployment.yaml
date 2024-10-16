@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resource-deployment
+  labels:
+    app: resource
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: resource
+  template:
+    metadata:
+      labels:
+        app: resource
+    spec:
+      containers:
+      - name: resource-service
+        image: moazzamali06/resourceapi:91f5323277c8724fbb71cd48dd92d0e416b1cfda
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"
+        - name: ASPNETCORE_URLS
+          value: "http://+:8080"
+        - name: MONGODB_URL
+          value: "mongodb+srv://doadmin:69J7sHzA812O43RQ@db-mongodb-fra1-90716-c039628c.mongo.ondigitalocean.com/Promentum-ResourceDb?tls=true&authSource=admin&replicaSet=db-mongodb-fra1-90716"
+        - name: RABBITMQ_URL
+          value: "amqp://admin:M3PS65*Oj@46.101.112.100:5672"
+        - name: "HTTP_PORT"
+          value: "8080"
+        - name: EventBusConnection
+          value: "rabbitmq"
+        - name: QueueName
+          value: "Resource_Queue"

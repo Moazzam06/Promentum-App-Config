@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: identity-service
+  labels:
+    app: identity-service
+spec:
+  selector:
+    app: identity-service
+  ports:
+  # - protocol: TCP
+  #   port: 443
+  #   targetPort: 443
+  #   nodePort: 32001  # NodePort for HTTPS
+  #  name: https
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+    #nodePort: 32001  # NodePort for HTTP
+    name: http
+  type: ClusterIP

@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-identity-config
+data:
+  postgres-url: "Server=db-postgresql-fra1-15218-do-user-17314231-0.e.db.ondigitalocean.com;Port=25060;Database=PromentumIdentityDb;User Id=doadmin;Password=AVNS_fvmnIq8SEFNaB7d2JqV;"

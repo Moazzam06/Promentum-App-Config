@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: subscription-service
+  labels:
+    app: subscription
+spec:
+  selector:
+    app: subscription
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+    #nodePort: 32001  # NodePort for HTTP
+    name: http
+  type: ClusterIP

@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-deployment
+  labels:
+    app: notification
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notification
+  template:
+    metadata:
+      labels:
+        app: notification
+    spec:
+      containers:
+      - name: notification-service
+        image: moazzamali06/notificationapi:91f5323277c8724fbb71cd48dd92d0e416b1cfda
+        imagePullPolicy: Always
+        ports:
+        # - containerPort: 443
+        - containerPort: 8080
+        # resources:
+        #   requests:
+        #     cpu: 100m
+        #     memory: 100Mi
+        #   Limits:
+        #     cpu: 200m
+        #     memory: 200Mi
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Production"
+        - name: ASPNETCORE_URLS
+          value: "http://+:8080"
+        # - name: ASPNETCORE_HTTPS_PORT
+        #   value: "6001"
+        # - name: ASPNETCORE_Kestrel__Certificates__Default__Password
+        #   value: "P@ssw0rd"
+        # - name: ASPNETCORE_Kestrel__Certificates__Default__Path
+        #   value: "/app/certs/localhost.cert.pfx"
+        - name: ConnectionString
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-notification-config
+              key: postgres-url
+        - name: RedisConnection
+          value: "db-caching-fra1-11916-do-user-17314231-0.i.db.ondigitalocean.com:25061,password=9gv07I26BV84QoC5,ssl=true,abortConnect=false"
+        - name: EventBusConnection
+          value: "46.101.112.100"
+        - name: EventBusPort
+          value: "5672"
+        - name: EventBusUserName
+          value: "admin"
+        - name: EventBusPassword
+          value: "M3PS65*Oj"
+        - name: EventBusRetryCount
+          value: "5"
+        - name: QueueName
+          value: "Notification_Queue"
+        - name: MailSettings__EmailFrom
+          value: "alva@askalva.com"
+        - name: MailSettings__SmtpUser
+          value: "alva@askalva.com"
+        - name: MailSettings__SmtpPassword
+          value: "P@$$w0rd0606"
+        - name: MailSettings__SmtpHost
+          value: "smtp.outlook.com"
+        - name: MailSettings__SmtpPort
+          value: "587"
+      #   volumeMounts:
+      #   - name: certs
+      #     mountPath: "/app/certs"
+      #     readOnly: true
+      # volumes:
+      # - name: certs
+      #   hostPath:
+      #     path: /app/certs

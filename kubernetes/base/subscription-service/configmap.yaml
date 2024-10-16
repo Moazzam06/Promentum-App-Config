@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-subscription-config
+data:
+  postgres-url: "Server=db-postgresql-fra1-15218-do-user-17314231-0.e.db.ondigitalocean.com;Port=25060;Database=PromentumSubscriptionDb;User Id=doadmin;Password=AVNS_fvmnIq8SEFNaB7d2JqV;"
+  #postgres-url: "Server=postgres-service;Port=5432;Database=Promentum.SubscriptionDb;User Id=postgres;Password=postgres;"

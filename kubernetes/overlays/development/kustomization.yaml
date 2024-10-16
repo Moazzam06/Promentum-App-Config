@@ -1,0 +1,11 @@
+resources:
+  - ../../base/identity-service
+  - ../../base/usermanagement-service
+  - ../../base/network-service
+  - ../../base/notification-service
+  - ../../base/subscription-service
+  - ../../base/resource-service
+  - ../../base/nginx
+
+# patchesStrategicMerge:
+#   - replicas.yaml

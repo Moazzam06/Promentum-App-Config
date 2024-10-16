@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: usermanagement-service
+  labels:
+    app: usermanagement-service
+spec:
+  selector:
+    app: usermanagement
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+    #nodePort: 32001  # NodePort for HTTP
+    name: http
+  type: ClusterIP

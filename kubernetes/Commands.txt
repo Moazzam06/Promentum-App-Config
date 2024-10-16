@@ -1,0 +1,3 @@
+kubectl apply -k overlays/development
+
+kubectl apply -k overlays/production

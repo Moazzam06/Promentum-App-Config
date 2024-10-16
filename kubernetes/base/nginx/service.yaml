@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  labels:
+    app: nginx
+spec:
+  type: LoadBalancer  # Use NodePort if necessary
+  ports:
+  - port: 5101
+    targetPort: 8080
+    protocol: TCP
+    name: http
+  - port: 5001
+    targetPort: 8443
+    protocol: TCP
+    name: https
+  selector:
+    app: nginx

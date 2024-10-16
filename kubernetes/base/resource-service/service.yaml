@@ -1,0 +1,17 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: resource-service
+  labels:
+    app: resource
+spec:
+  selector:
+    app: resource
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+    #nodePort: 32001  # NodePort for HTTP
+    name: http
+  type: ClusterIP
