@@ -24,9 +24,9 @@ spec:
         volumeMounts:
         - name: tls-certs
           mountPath: /etc/ssl/certs
-        args:
-          - "--config-path"
-          - "/etc/nginx/nginx.conf"  # Path to your nginx config inside the container
+        # args:
+        #   - "--config-path"
+        #   - "/etc/nginx/nginx.conf"  # Path to your nginx config inside the container
         resources:
           requests:
             cpu: "100m"
