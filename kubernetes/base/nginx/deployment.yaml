@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: moazzamali06/webnginxapigw:k8-dev-b094ac4251669a725ba8f51207eafd00541e2e1a
+        image: moazzamali06/webnginxapigw:k8-dev-7a3993f6ac1cc61a42b535aa341107a2aed52e2b
         imagePullPolicy: Always
         ports:
         - containerPort: 8080   # HTTP port
