@@ -21,9 +21,9 @@ spec:
         ports:
         - containerPort: 8080   # HTTP port
         - containerPort: 8443   # HTTPS port
-        volumeMounts:
-        - name: tls-certs
-          mountPath: /etc/ssl/certs
+        # volumeMounts:
+        # - name: tls-certs
+        #   mountPath: /etc/ssl/certs
         # args:
         #   - "--config-path"
         #   - "/etc/nginx/nginx.conf"  # Path to your nginx config inside the container
@@ -34,7 +34,7 @@ spec:
           limits:
             cpu: "500m"
             memory: "512Mi"
-      volumes:
-      - name: tls-certs
-        secret:
-          secretName: tls-secret  # The secret that stores your TLS certificate and private key
+      # volumes:
+      # - name: tls-certs
+      #   secret:
+      #     secretName: tls-secret  # The secret that stores your TLS certificate and private key
