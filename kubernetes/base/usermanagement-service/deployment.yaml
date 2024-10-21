@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: usermanagement-service
-        image: moazzamali06/usermanagementapi:k8-dev-65e44a19c38a43c67cac29d22802c251a998d149
+        image: moazzamali06/usermanagementapi:k8-dev-fa1e3643e448def4e983f0d24fb1de1750babea6
         imagePullPolicy: Always
         ports:
         # - containerPort: 443
