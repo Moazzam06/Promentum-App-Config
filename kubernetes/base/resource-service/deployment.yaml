@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: resource-service
-        image: moazzamali06/resourceapi:k8-dev-bcf77675ba9773a34423bf1decde5748301294a7
+        image: moazzamali06/resourceapi:k8-dev-70102339795dda3beb1ffd24df4672746dded02c
         ports:
         - containerPort: 8080
         env:
