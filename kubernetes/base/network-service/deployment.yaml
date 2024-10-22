@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: network-service
-        image: moazzamali06/networkapi:k8-dev-4699a4a9e4ae04c50642f0b0a3fb240f0bf3a8a1
+        image: moazzamali06/networkapi:k8-dev-c82529fc93a91c6a88b93e3122989e5ef0968f89
         imagePullPolicy: Always
         ports:
         # - containerPort: 443
