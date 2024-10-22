@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: subscription-service
-        image: moazzamali06/subscriptionapi:k8-dev-224f3473368f471ba2bc16728410b6598d2efe3b
+        image: moazzamali06/subscriptionapi:k8-dev-4699a4a9e4ae04c50642f0b0a3fb240f0bf3a8a1
         imagePullPolicy: Always
         ports:
         # - containerPort: 443
