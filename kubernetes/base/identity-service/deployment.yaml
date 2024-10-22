@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: identity-service
-        image: moazzamali06/identityapi:k8-dev-897aa8e50e7ab5f866db0c44e772a202b8990790
+        image: moazzamali06/identityapi:k8-dev-dd0f1a855205da05b1049fbd071c63764e93f0e6
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
