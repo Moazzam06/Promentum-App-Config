@@ -1,5 +1,8 @@
 kubectl apply -k overlays/development
 
+# run ArgoCD on server
+kubectl apply -f application.yaml
+
 kubectl apply -k overlays/production
 
 ======================================================================================
