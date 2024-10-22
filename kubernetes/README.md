@@ -25,3 +25,4 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o yaml
 echo MnNnMXg0cXo1cnhCSE9mbQ== | base64 --decode
 2sg1x4qz5rxBHOfm
 ==========================================================================================
+doctl apps update 00337ea7-165c-4410-8881-39f4e4ee2bfa --spec ./webapp-spec.yml || doctl apps create --spec ./webapp-spec.yml  
