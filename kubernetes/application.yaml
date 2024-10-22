@@ -11,7 +11,7 @@ spec:
     targetRevision: main
     path: kubernetes/overlays/development
   destination: 
-    server: https://d5b651e8-bf3c-4963-9522-546ed5c8c22a.k8s.ondigitalocean.com
+    server: https://kubernetes.default.svc
     namespace: promentum-app
 
   syncPolicy:
